@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuDetecter : MonoBehaviour {
     private bool walking = false;
-
+    public GameObject Dummy;
     private bool showMenu;
 
     // Use this for initialization
@@ -26,7 +26,7 @@ public class MenuDetecter : MonoBehaviour {
         {
             if (hit.collider.name.Contains("MenuArea"))
             {
-                walking = true;
+               Instantiate(Dummy, hit.point , Quaternion.identity);
             }
             else
             {
